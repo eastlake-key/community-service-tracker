@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/community-service-tracker/static/css/main.f171db5b.chunk.css",
+    "main.css": "/community-service-tracker/static/css/main.87ae5e13.chunk.css",
     "main.js": "/community-service-tracker/static/js/main.3806d378.chunk.js",
     "main.js.map": "/community-service-tracker/static/js/main.3806d378.chunk.js.map",
     "runtime-main.js": "/community-service-tracker/static/js/runtime-main.44d0f972.js",
@@ -8,16 +8,16 @@
     "static/js/2.e21c45c7.chunk.js": "/community-service-tracker/static/js/2.e21c45c7.chunk.js",
     "static/js/2.e21c45c7.chunk.js.map": "/community-service-tracker/static/js/2.e21c45c7.chunk.js.map",
     "index.html": "/community-service-tracker/index.html",
-    "precache-manifest.a80f38f84e88b3acb14f6ee3e9514adc.js": "/community-service-tracker/precache-manifest.a80f38f84e88b3acb14f6ee3e9514adc.js",
+    "precache-manifest.2daad5b1a7e938435d0021323f76b9ed.js": "/community-service-tracker/precache-manifest.2daad5b1a7e938435d0021323f76b9ed.js",
     "service-worker.js": "/community-service-tracker/service-worker.js",
-    "static/css/main.f171db5b.chunk.css.map": "/community-service-tracker/static/css/main.f171db5b.chunk.css.map",
+    "static/css/main.87ae5e13.chunk.css.map": "/community-service-tracker/static/css/main.87ae5e13.chunk.css.map",
     "static/js/2.e21c45c7.chunk.js.LICENSE.txt": "/community-service-tracker/static/js/2.e21c45c7.chunk.js.LICENSE.txt",
     "static/media/wolflogo.png": "/community-service-tracker/static/media/wolflogo.731ead9b.png"
   },
   "entrypoints": [
     "static/js/runtime-main.44d0f972.js",
     "static/js/2.e21c45c7.chunk.js",
-    "static/css/main.f171db5b.chunk.css",
+    "static/css/main.87ae5e13.chunk.css",
     "static/js/main.3806d378.chunk.js"
   ]
 }
