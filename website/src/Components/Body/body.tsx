@@ -1,7 +1,57 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Body = () => {
+const BodyText: React.FunctionComponent<{ signedInUser: string | boolean }> = ({
+  signedInUser,
+}) => {
+  return (
+    <div className={"flex flex-col justify-center"}>
+      <h1
+        className={
+          "text-center text-white py-2 lg:py-3 text-4xl sm:text-4xl lg:text-5xl xl:text-6xl"
+        }
+      >
+        EASTLAKE COMMUNITY SERVICE PORTAL
+      </h1>
+      {!signedInUser ? (
+        <>
+          <Link to="/login">
+            <h2
+              className={
+                "text-center text-white py-2 lg:py-3 text-base sm:text-xl lg:text-2xl xl:text-3xl"
+              }
+            >
+              Login to track service activities
+            </h2>
+          </Link>
+          <Link to="/login">
+            <h3
+              className={
+                "text-center font-light text-white py-2 lg:py-3 text-sm sm:text-base lg:text-lg xl:text-xl"
+              }
+            >
+              An OTP login link will be sent to your email adress.
+            </h3>
+          </Link>
+        </>
+      ) : (
+        <>
+          <h2
+            className={
+              "text-center text-white py-2 lg:py-3 text-base sm:text-xl lg:text-2xl xl:text-3xl"
+            }
+          >
+            Logged in as {signedInUser}
+          </h2>
+        </>
+      )}
+    </div>
+  );
+};
+
+const Body: React.FunctionComponent<{
+  isLoggedIn: string | boolean;
+}> = ({ isLoggedIn }) => {
   return (
     <div className={"flex-1"}>
       <div className={"flex justify-center"}>
@@ -11,33 +61,7 @@ const Body = () => {
           alt={"wolfpack logo"}
         />
       </div>
-      <div className={"flex flex-col justify-center"}>
-        <h1
-          className={
-            "text-center text-white py-2 lg:py-3 text-4xl sm:text-4xl lg:text-5xl xl:text-6xl"
-          }
-        >
-          EASTLAKE COMMUNITY SERVICE PORTAL
-        </h1>
-        <Link to="/login">
-          <h2
-            className={
-              "text-center text-white py-2 lg:py-3 text-base sm:text-xl lg:text-2xl xl:text-3xl"
-            }
-          >
-            Login to track service activities
-          </h2>
-        </Link>
-        <Link to="/login">
-          <h3
-            className={
-              "text-center font-light text-white py-2 lg:py-3 text-sm sm:text-base lg:text-lg xl:text-xl"
-            }
-          >
-            An OTP login link will be sent to your email adress.
-          </h3>
-        </Link>
-      </div>
+      <BodyText signedInUser={isLoggedIn} />
     </div>
   );
 };

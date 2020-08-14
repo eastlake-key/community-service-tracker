@@ -5,37 +5,47 @@ import { signOut } from "../../Firebase/linkAuth/signOut";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 const HeaderButtons: React.FunctionComponent<{}> = () => {
-  const signedIn = useIsSignedIn();
-  // Display user email adress if the user is signed in
-  if (signedIn && typeof signedIn === "string") {
-    return (
-      <>
-        <a className="block lg:inline-block text-white mr-6 mt-2 lg:mt-auto">
-          {signedIn}
-        </a>
-        <a
-          href="#"
-          onClick={async (e) => {
-            e.preventDefault();
-            const error = await signOut();
-            if (error) {
-              console.log(error);
-            }
-          }}
-          className="block lg:inline-block text-white mr-6 mt-2 lg:mt-auto"
-        >
-          Logout
-        </a>
-      </>
-    );
-  }
+  const signedIn = useIsSignedIn() as string; // value can never be true so use it as string
   return (
-    <Link
-      className="block lg:inline-block text-white mr-6 mt-2 lg:mt-auto"
-      to={"/login"}
-    >
-      Login
-    </Link>
+    <>
+      {signedIn ? (
+        <>
+          <a className="block lg:inline-block text-white mr-6 mt-2 lg:mt-auto">
+            {signedIn}
+          </a>
+          <a
+            href="#"
+            onClick={async (e) => {
+              e.preventDefault();
+              const error = await signOut();
+              if (error) console.log(error);
+            }}
+            className="block lg:inline-block text-white mr-6 mt-2 lg:mt-auto"
+          >
+            Logout
+          </a>
+          <Link
+            className="block lg:inline-block text-white mr-6 mt-2 lg:mt-auto"
+            to={"/account"}
+          >
+            Account
+          </Link>
+          <Link
+            className="block lg:inline-block text-white mr-6 mt-2 lg:mt-auto"
+            to={"/track"}
+          >
+            Track Time
+          </Link>
+        </>
+      ) : (
+        <Link
+          className="block lg:inline-block text-white mr-6 mt-2 lg:mt-auto"
+          to={"/login"}
+        >
+          Login
+        </Link>
+      )}
+    </>
   );
 };
 

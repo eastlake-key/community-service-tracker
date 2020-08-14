@@ -6,7 +6,9 @@ import Footer from "../Components/Footer/footer";
 
 import signInwithLink from "../Firebase/linkAuth/signInWithLink";
 
-const Home = () => {
+const Home: React.FunctionComponent<{ isLoggedIn: string | boolean }> = ({
+  isLoggedIn,
+}) => {
   // If a user is redirected to the home page from an auth link, we should log the user into our app.
   useEffect(() => {
     signInwithLink().then((value) => {
@@ -20,7 +22,7 @@ const Home = () => {
         description="Main page for the eastlake service tracker website where students can record their volunteer hours."
       />
       <PageHeader />
-      <Body />
+      <Body isLoggedIn={isLoggedIn} />
       <Footer />
     </div>
   );

@@ -1,10 +1,12 @@
 import React from "react";
+import useIsSignedIn from "./Firebase/linkAuth/useIsSignedIn";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./Pages/home";
 import Login from "./Pages/login";
 
 const AppRouter = () => {
+  const signedIn = useIsSignedIn();
   return (
     <Router>
       <Switch>
@@ -12,7 +14,7 @@ const AppRouter = () => {
           <Login />
         </Route>
         <Route path="/">
-          <Home />
+          <Home isLoggedIn={signedIn} />
         </Route>
       </Switch>
     </Router>
