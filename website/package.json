@@ -42,10 +42,22 @@
     "build": "yarn tailwind && react-scripts build",
     "test": "yarn tailwind && react-scripts test",
     "eject": "react-scripts eject",
-    "tailwind": "npx tailwindcss build ./src/styles/tailwind.in.css -o src/styles/tailwind.out.css"
+    "tailwind": "npx tailwindcss build ./src/styles/tailwind.in.css -o src/styles/tailwind.out.css",
+    "storybook": "yarn tailwind && start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   },
   "browserslist": {
     "production": [
@@ -61,6 +73,12 @@
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^2.3.0",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/node-logger": "^6.2.9",
+    "@storybook/preset-create-react-app": "^3.1.7",
+    "@storybook/react": "^6.2.9",
     "@typescript-eslint/eslint-plugin": "^3.10.0",
     "@typescript-eslint/parser": "^3.10.0",
     "eslint-plugin-react": "^7.20.6"
